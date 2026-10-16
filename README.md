@@ -7,7 +7,7 @@
 
 ## Model and experiments
 
-The base model uses 200 agents on a bounded 20×20 grid: 195 susceptible, 5 infected, and 0 recovered. Multiple agents can share a cell. At each step, agents randomly choose to stay or move up, down, left, or right. Moves outside the grid are not allowed.
+The initial model consisted of 200 agents on a restricted 20x20 grid: 195 susceptible, 5 infected, and 0 recovered. Cells can be shared by multiple substances. At every step agents randomly select to stay, or to advance up, down, left or right. They cannot move outside the grid.
 
 After movement, a susceptible agent sharing a cell with at least one infected agent becomes infected with probability `p`. This probability stays at `p`, even if several infected agents share the cell. Agents infected at the start of the step recover with probability `q`. State changes happen together, so newly infected agents cannot transmit or recover until the next step. Recovered agents remain immune.
 
@@ -79,12 +79,11 @@ At `p=0.15, q=0.04`, some runs infected only 8 agents in total, while others rea
 
 An outbreak was considered to have died off early if no infected agents remained by step 50. This was observed only once, in the `p=0.15, q=0.04` group. We would need more runs to estimate how common this is.
 
-At both values of `q`, increasing `p` produced larger outbreaks. Increasing `q` reduced the peak and total number infected. Higher `p` shifted the average peak earlier at `q=0.02` and later at `q=0.04`. The notebook also reports standard deviations and ranges. Part A and Part B have slightly different baseline averages because they use different seeds.
-
+At both values of `q`, increasing `p` produced larger outbreaks. Increasing `q` reduced the peak and total number infected. Higher `p' pushed the average peak earlier at q=0.02 and later at q=0.04. The notebook also gives standard deviations and ranges. Different seeds therefore baseline averages are slightly different between Part A and Part B.
 
 ### (iii) Comparison with the SIR model
 
-**Hypothesis:** The average curves will resemble the SIR pattern: susceptible counts fall, infections rise and then fall, and recovered counts increase. Local contacts may cause differences from a uniformly mixed model.
+**Hypothesis:** The average curves will have a SIR-like shape: susceptible numbers decrease, infections grow and then decrease, and recovered numbers climb. Local contacts may generate deviations from the evenly mixed model.
 
 ![Single base simulation with p=0.3 and q=0.02](figures/part_a_base_sir.png)
 
@@ -95,9 +94,9 @@ The base run above and the average curves in Part A show the expected SIR patter
 
 ### (iv) Population density (extension)
 
-**Hypothesis:** Higher density will increase the infection peak. Reduced movement may be less effective in crowded environments because agents can remain in contact even when they do not move.
+**Hypothesis:** Hypothesis : Higher density will raise the peak of infection . In congested surroundings, reducing movement may be less helpful, as agents can stay in contact if they do not move.
 
-The 10×10, 20×20, and 30×30 grids with 200 agents exhibit average densities of 2.00, 0.50, and ~0.22 agents per cell, respectively. Each grid / movement combination was repeated 30 times.
+The mean densities for the 200 agents in the 10×10, 20×20, and 30×30 grids are 2.00, 0.50, and ~0.22 agents per cell, respectively. Each grid/movement combination was repeated 30 times.
 
 | Grid | Peak infected at m=1 (%) | Peak infected at m=0.3 (%) | Relative peak reduction at m=0.3 (%) | Ever infected by 300 at m=0.1 (%) |
 |---|---:|---:|---:|---:|
@@ -113,7 +112,7 @@ Relative peak reduction is `100 × (baseline mean peak − intervention mean pea
 
 The most crowded grid had the highest peak at every value of `m`. Moving less helped, but less in the 10×10 grid. Even at `m=0.1`, nearly everyone there had been infected by step 300. Agents sharing a cell can still transmit the infection without moving. This may explain the difference, although repeated contacts were not counted.
 
-At `m=0.1`, the peak dropped by 81.9% in the 20×20 grid and 78.7% in the 30×30 grid. The least crowded grid did not always have the largest relative reduction.
+At `m=0.1`, the peak decreased by 81.9% in the 20×20 grid and 78.7% in the 30×30 grid. The least crowded grid did not always have the largest relative reduction.
 
 Smaller grids are quicker to cross and have a higher proportion of boundary cells, where outward moves are blocked. The experiment changes spatial mixing as well as density. The 300-step limit may also miss later peaks in unfinished outbreaks.
 
