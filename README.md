@@ -137,4 +137,4 @@ python -m jupyterlab q2.ipynb
 
 ## AI statement
 
-Statement: ChatGPT was used to complete this homework. The full chat is available at: https://chatgpt.com/share/6ad1a2cc-b6bc-83ea-9a52-cabe216a9c88.
+Statement: ChatGPT was used to complete this homework. The full chat is available at: https://chatgpt.com/share/6ad1aecb-8278-83ea-94ac-e1962000db7e
