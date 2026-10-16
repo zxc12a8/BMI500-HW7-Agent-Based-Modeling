@@ -79,7 +79,7 @@ At `p=0.15, q=0.04`, some runs infected only 8 agents in total, while others rea
 
 An outbreak was considered to have died off early if no infected agents remained by step 50. This was observed only once, in the `p=0.15, q=0.04` group. We would need more runs to estimate how common this is.
 
-At both values of `q`, increasing `p` produced larger outbreaks. Increasing `q` reduced the peak and total number infected. Higher `p` pushed the average peak earlier at q=0.02 and later at q=0.04. The notebook also gives standard deviations and ranges. Different seeds therefore baseline averages are slightly different between Part A and Part B.
+At both values of `q`, increasing `p` produced larger outbreaks. Increasing `q` reduced the peak and total number infected. Higher `p` pushed the average peak earlier at q=0.02 and later at q=0.04. The notebook also gives standard deviations and ranges. Part A and Part B used different seeds, so their baseline averages differ slightly.
 
 ### (iii) Comparison with the SIR model
 
@@ -94,7 +94,7 @@ The base run above and the average curves in Part A show the expected SIR patter
 
 ### (iv) Population density (extension)
 
-**Hypothesis:** Higher density will raise the peak of infection . In congested surroundings, reducing movement may be less helpful, as agents can stay in contact if they do not move.
+**Hypothesis:** Higher density will raise the peak of infection. In congested surroundings, reducing movement may be less helpful, as agents can stay in contact if they do not move.
 
 The mean densities for the 200 agents in the 10×10, 20×20, and 30×30 grids are 2.00, 0.50, and ~0.22 agents per cell, respectively. Each grid/movement combination was repeated 30 times.
 
